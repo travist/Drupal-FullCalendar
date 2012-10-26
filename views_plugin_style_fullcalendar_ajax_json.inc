@@ -19,7 +19,7 @@ class views_plugin_style_fullcalendar_ajax_json extends views_plugin_style {
     $options['className'] = 0;
     $options['editable'] = 0;
     $options['description'] = 0;
-    $options['daily_limit'] = '';    
+    $options['daily_limit'] = '';
     return $options;
   }
 
@@ -117,7 +117,7 @@ class views_plugin_style_fullcalendar_ajax_json extends views_plugin_style {
       '#description' => t("(Advanced) Limit the number of events per day which will be returned."),
     );
   }
-  
+
   function query() {
     if (!empty($this->options['daily_limit'])) {
       $this->view->query->add_field(NULL, "date_format(STR_TO_DATE(" . $this->view->field[$this->options['start']]->options['table'] . '.' . $this->view->field[$this->options['start']]->options['field'] . ", '%Y-%m-%%dT%T'), '%Y-%m-%%d')", 'daily_limiter');
@@ -173,6 +173,11 @@ class views_plugin_style_fullcalendar_ajax_json extends views_plugin_style {
         if ($key == 'end') {
           $structure[$key] = array_shift(explode(' ', strip_tags($field[$value])));
         }
+      }
+      if (isset($field['title'])) {
+        // Prevent double escaping of HTML characters; decode strings before
+        // encoding to JSON via drupal_to_js().
+        $structure['title'] = strip_tags(htmlspecialchars_decode($field['title'], ENT_QUOTES));
       }
       if ($include_event) {
         // Add unexcluded rendered fields to flyout.  This is should be in a seperate theme func.
