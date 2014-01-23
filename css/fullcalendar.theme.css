@@ -1,0 +1,120 @@
+
+/* Undo Drupal default theme link colors */
+.fc-content a:link,
+.fc-content a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Reset FullCalendar generic style */
+.fc-event,
+.fc-agenda .fc-event-time,
+.fc-event a {
+  border-style: none;
+  background-color: transparent;
+  color: inherit;
+}
+
+/* Set FullCalendar default style */
+.fc-event-default,
+.fc-event-default .fc-event-time,
+.fc-event-default a {
+  border-color: #36c;
+  border-style: solid;
+  background-color: #36c;
+  color: #fff;
+}
+
+/* Styling for updated message */
+.fullcalendar-status {
+  background: #ecf8f4;
+  border: 1px solid #fff;
+  color: #687;
+  display: none;
+  margin: 0 0 10px 0;
+  padding: 15px;
+  text-align: center;
+}
+.fullcalendar-status-close {
+  text-transform: lowercase;
+}
+
+.fc table {
+  margin: 0;
+}
+
+table.fc-header {
+  margin-bottom: 10px;
+}
+
+.fc-header tbody,
+.fc-header th,
+.fc-header td {
+  border: 0;
+}
+
+.fc-header .fc-state-default,
+.fc-header .ui-state-default {
+  margin-bottom: 0;
+}
+
+/* Add flyout */
+a span.fc-flyout {
+  display:none;
+}
+
+a:hover span.fc-flyout {
+  display:block;
+
+  position:absolute;
+  left:50%;
+  bottom:5px;
+  z-index:1000;
+
+  width:150px;
+  margin-left:-24px;
+  padding:0px 0px 10px;
+
+  overflow:hidden;
+  opacity:0.8;
+  background: url(../images/flyout.png) 20px 100% no-repeat;
+}
+
+a:hover span.fc-flyout span.fc-flyout-content {
+  display:block;
+  padding:10px;
+  background:#000;
+  color:#fff;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  text-decoration: none;
+}
+a:hover span.fc-flyout span.fc-flyout-content * {
+  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+.fc-view {
+  overflow: visible;
+}
+
+.fc-event a {
+  overflow: visible;
+}
+
+.fc-event-vert span.fc-event-time{
+  overflow: visible;
+}
+/* End flyout */
+
+/* Add throbber when working */
+h2.fc-ajaxing {
+  padding-right: 18px !important;
+  background: url(../images/throbber.gif) right -18px no-repeat;
+}
+
+/* Hide plain text events when javascript is enabled */
+html.js .fullcalendar-content {
+  display: none;
+}

@@ -4,6 +4,7 @@ sites/all/libraries/fullcalendar directory, or use the Libraries API module for
 site specific libraries.
 
 This version of FullCalendar requires specific versions of the following:
+  The 6.x-3.x branch of Views (http://drupal.org/project/views)
   The 6.x-2.x branch of jQuery Update (http://drupal.org/project/jquery_update)
   Version 1.7 of jQuery UI (http://drupal.org/project/jquery_ui)
 Instructions for installing each can be found in their respective README.txt files
@@ -18,4 +19,4 @@ To use the fullcalendar module:
 KNOWN ISSUES:
 When displaying a repeating date field, each event might show up multiple times
 on each repeat instance. To solve this problem, change the 'Distinct' setting
-to yes in the Views display settings. This is a not a bug in FullCalendar.
+to yes in the Views display settings. This is not a bug in FullCalendar.
